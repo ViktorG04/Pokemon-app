@@ -4,10 +4,10 @@ import { TYPES } from "../../../config/config";
 export const PokemonContainer = styled.div`
   display: flex;
   width: auto;
-  border: 2px solid black;
   border-radius: 10px;
   justify-content: space-between;
   margin: 10px;
+  background: #cfcfcf;
 `;
 
 export const ContainerDetails = styled.div`
@@ -32,7 +32,8 @@ export const Button = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
-  background: navajowhite;
+  border: none;
+  background: white;
 
   :hover {
     background-color: #4791d0;
@@ -53,7 +54,8 @@ export const Type = styled.strong`
   margin: 10px;
   text-transform: capitalize;
   text-align: center;
-  border: 2px solid white;
+  border: 2px;
+  border-radius: 5px;
 `;
 
 export const Image = styled.img`

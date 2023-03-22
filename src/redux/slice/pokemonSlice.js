@@ -4,7 +4,7 @@ import { getPokemons } from "../action/pokemonActions";
 const initialState = {
   loading: false,
   request: true,
-  error: null,
+  error: false,
   pokemons: [],
 };
 
@@ -28,7 +28,8 @@ export const PokemonSlice = createSlice({
       }))
       .addCase(getPokemons.rejected, (state, action) => ({
         ...state,
-        error: action.payload,
+        loading: false,
+        error: true,
       }));
   },
 });

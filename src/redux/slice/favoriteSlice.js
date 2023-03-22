@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  notification: null,
   favorites: [],
 };
 
@@ -11,13 +10,11 @@ export const PokemonSlice = createSlice({
 
   reducers: {
     addPokemon: (state, action) => {
-      state.notification = "successful";
       state.favorites.push(action.payload);
     },
     deletePokemon: (state, action) => {
-      state.notification = "deleted";
       const list = state.favorites;
-      state.favorites = list.filter((favorite) => favorite.id !== action.payload);
+      state.favorites = list.filter((favorite) => favorite.alias !== action.payload);
     },
   },
 });

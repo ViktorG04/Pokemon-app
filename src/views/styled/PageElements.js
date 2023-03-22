@@ -9,11 +9,18 @@ export const ContainerPage = styled.div`
 `;
 
 export const BodyError = styled.div`
-  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
+  padding: 5px;
+  font-size: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 800px) {
+    font-size: 40px;
+    padding: 40px;
+  }
 `;
 
 export const Error = styled.h1`

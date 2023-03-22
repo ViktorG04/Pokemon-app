@@ -19,7 +19,7 @@ export const Image = styled.img`
   display: block;
   cursor: pointer;
   width: 25vh;
-  background: rgb(220 215 215);
+  background: none;
 
   @media (min-width: 800px) {
     width: 35vh;

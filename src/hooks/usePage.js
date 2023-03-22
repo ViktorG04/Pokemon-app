@@ -43,7 +43,11 @@ const usePage = (list, name) => {
     setCurrentPage(nextPage);
   };
 
-  return { word, setWord, currentItems, currentPage, buttonPrev, buttonNext };
+  const catchCharacters = (event) => {
+    setWord((event?.target.value).toLocaleLowerCase());
+  };
+
+  return { word, catchCharacters, currentItems, currentPage, buttonPrev, buttonNext };
 };
 
 export default usePage;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { API_URL } from "../../config/config";
 import { toast } from "react-hot-toast";
-
+import { Type } from "./styled/PokemonElements";
 import {
   Container,
   NamePokemon,
@@ -12,9 +12,7 @@ import {
   Level,
   Inner,
 } from "./styled/PokemonDetailsElements";
-
-import { Type } from "./styled/PokemonElements";
-import Details from "../details/Details";
+import PokemonStat from "./PokemonStat";
 
 const defaultValues = {
   name: "",
@@ -82,12 +80,12 @@ const PokemonDetails = ({ idPokemon, onCloseModal }) => {
               </Type>
             ))}
           </ContainerTypes>
-          <Details name="Base Experience" information={base_experience} />
-          <Details name="Weight" information={weight} />
+          <PokemonStat name="Base Experience" information={base_experience} />
+          <PokemonStat name="Weight" information={weight} />
 
           {stats.slice(0, 3).map((stat, index) => (
             <div key={`stat-${parseInt(index)}`}>
-              <Details name={stat?.stat?.name} information={stat?.base_stat} />
+              <PokemonStat name={stat?.stat?.name} information={stat?.base_stat} />
               <Level>
                 <Inner stat={stat?.stat?.name} level={stat?.base_stat} />
               </Level>

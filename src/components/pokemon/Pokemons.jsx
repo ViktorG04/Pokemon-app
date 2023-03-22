@@ -5,15 +5,9 @@ import PokemonDetails from "./PokemonDetails";
 import AddFavorite from "../form/AddFavorite";
 import useCurrentList from "../../hooks/useCurrentList";
 import useModal from "../../hooks/useModal";
-import {
-  ContainerList,
-  ContainerButtons,
-  ContainerGroupPokemon,
-  Button,
-  Page,
-} from "./styled/PokemonsElements";
+import { ContainerList, ContainerGroupPokemon } from "./styled/PokemonsElements";
 
-const Pokemons = ({ Pokemons, currentPage, onHandlePrev, onHandleNext }) => {
+const Pokemons = ({ Pokemons }) => {
   const { open: details, closeModal: closeModalDetails, openModal: openModalDetails } = useModal();
   const { open: form, closeModal: closeModalForm, openModal: openModalForm } = useModal();
 
@@ -25,17 +19,6 @@ const Pokemons = ({ Pokemons, currentPage, onHandlePrev, onHandleNext }) => {
 
   return (
     <ContainerList>
-      <Page>Page: {currentPage}</Page>
-      <ContainerButtons>
-        <Button onClick={onHandlePrev}>
-          <i className="fas fa-angle-double-left" />
-        </Button>
-
-        <Button onClick={onHandleNext}>
-          <i className="fas fa-angle-double-right" />
-        </Button>
-      </ContainerButtons>
-
       {groups.map((group, index) => (
         <ContainerGroupPokemon key={`group-${parseInt(index)}`}>
           {group.map((pokemon, index) => (

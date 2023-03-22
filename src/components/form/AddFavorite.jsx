@@ -2,11 +2,10 @@ import React from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addPokemon } from "../../redux/slice/favoriteSlice";
+import { Container, Form, ContainerButtons, Button } from "./FormElements";
 import Input from "../formComponents/Input";
 import Textarea from "../formComponents/Textarea";
 import useForm from "../../hooks/useForm";
-
-import { Container, Form, ContainerButtons, Button } from "./FormElements";
 
 const AddFavorite = ({ pokemon, onCloseModal }) => {
   const { values, errors, validate, onHandleChange } = useForm({
@@ -39,6 +38,7 @@ const AddFavorite = ({ pokemon, onCloseModal }) => {
           placeholder="alias"
           onHandleChange={onHandleChange}
           error={errors?.alias}
+          search={false}
         />
         <Textarea
           label="Comments"

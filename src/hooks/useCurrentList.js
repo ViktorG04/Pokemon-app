@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { groupPokemons } from "../helpers/helper";
 
 const useCurrentList = (pokemons, openModalDetails, openModalForm) => {

@@ -3,27 +3,22 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { deletePokemon } from "../redux/slice/favoriteSlice";
 
-const useFavorite = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+const useFavorite = (openViewPokemon) => {
   const [idPokemon, setIdPokemon] = useState(null);
 
   const dispatch = useDispatch();
 
-  const onHandleDelete = (id) => {
-    dispatch(deletePokemon(id));
+  const onHandleDelete = (alias) => {
+    dispatch(deletePokemon(alias));
     toast.success("pokemon removed from favorites list");
   };
 
   const onHandleDetails = (id) => {
     setIdPokemon(id);
-    setIsOpenModal(true);
+    openViewPokemon();
   };
 
-  const onHandleCloseModal = () => {
-    setIsOpenModal(false);
-  };
-
-  return { isOpenModal, idPokemon, onHandleCloseModal, onHandleDetails, onHandleDelete };
+  return { idPokemon, onHandleDetails, onHandleDelete };
 };
 
 export default useFavorite;

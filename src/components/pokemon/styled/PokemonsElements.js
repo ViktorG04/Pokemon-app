@@ -6,12 +6,8 @@ export const ContainerList = styled.div`
   overflow: hidden;
   margin: 40px auto;
   padding: 20px;
-`;
-
-export const ContainerButtons = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 `;
 
 export const ContainerGroupPokemon = styled.div`
@@ -20,20 +16,4 @@ export const ContainerGroupPokemon = styled.div`
   margin: 20px auto;
   box-sizing: border-box;
   flex-wrap: wrap;
-`;
-
-export const Button = styled.button`
-  display: block;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 18px;
-  background: navajowhite;
-
-  :hover {
-    background-color: #4791d0;
-  }
-`;
-
-export const Page = styled.h1`
-  text-align: center;
 `;
