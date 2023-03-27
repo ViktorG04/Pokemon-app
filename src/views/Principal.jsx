@@ -7,6 +7,7 @@ import usePage from "../hooks/usePage";
 import Pokemons from "../components/pokemon/Pokemons";
 import Dashboard from "../components/dashboard/Dashboard";
 import InformationPage from "../components/page/InformationPage";
+import usePagePokemons from "../hooks/useMarkFavorites";
 
 const Principal = () => {
   const { loading, pokemons, error, request } = useSelector((state) => state.pokemons);
@@ -15,6 +16,8 @@ const Principal = () => {
     pokemons,
     "name"
   );
+
+  const { pokemonsPage } = usePagePokemons(currentItems);
 
   const dispatch = useDispatch();
 
@@ -45,7 +48,7 @@ const Principal = () => {
               onHandleNext={buttonNext}
               page="principal"
             />
-            <Pokemons Pokemons={currentItems} />
+            <Pokemons pokemons={pokemonsPage} />
           </Container>
         )}
       </>

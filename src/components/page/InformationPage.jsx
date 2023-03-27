@@ -18,7 +18,7 @@ const InformationPage = ({
         <Button onClick={onHandlePrev}>
           <i className="fas fa-angle-double-left" />
         </Button>
-        <h1>Page {currentPage}</h1>
+        <h1>Page {currentPage + 1}</h1>
         <Button onClick={onHandleNext}>
           <i className="fas fa-angle-double-right" />
         </Button>

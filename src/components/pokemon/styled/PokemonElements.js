@@ -3,11 +3,10 @@ import { TYPES } from "../../../config/config";
 
 export const PokemonContainer = styled.div`
   display: flex;
-  width: auto;
-  border-radius: 10px;
   justify-content: space-between;
-  margin: 10px;
   background: #cfcfcf;
+  border-radius: 10px;
+  margin: 10px;
 `;
 
 export const ContainerDetails = styled.div`
@@ -41,9 +40,14 @@ export const Button = styled.button`
 `;
 
 export const NamePokemon = styled.h2`
-  padding: 10px;
+  padding-top: 10px;
   color: blue;
   text-align: center;
+  font-size: 1rem;
+
+  @media (min-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Type = styled.strong`

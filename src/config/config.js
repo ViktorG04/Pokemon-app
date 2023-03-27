@@ -1,6 +1,7 @@
 export const API_URL = process.env.REACT_APP_API_KEY || "";
 export const STORE_KEY = process.env.REACT_APP_STORE_KEY || "";
 export const ALL_POKEMONS = 1010;
+export const ITEMS_PER_PAGE = 20;
 export const NUMBERS = [
   "1",
   "2",

@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
-import { groupPokemons } from "../helpers/helper";
+import { useState } from "react";
 
-const useCurrentList = (pokemons, openModalDetails, openModalForm) => {
+const useCurrentList = (openModalDetails, openModalForm) => {
   const [idPokemon, setIdPokemon] = useState(null);
   const [pokemon, setPokemon] = useState({});
-  const [groups, setGroups] = useState([]);
-
-  useEffect(() => {
-    const result = groupPokemons(pokemons);
-    setGroups(result);
-  }, [pokemons]);
 
   const onHandleDetails = (id) => {
     setIdPokemon(id);
@@ -24,7 +17,6 @@ const useCurrentList = (pokemons, openModalDetails, openModalForm) => {
   return {
     idPokemon,
     pokemon,
-    groups,
     onHandleDetails,
     onHandleAddFavorite,
   };

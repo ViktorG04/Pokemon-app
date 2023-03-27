@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { API_URL } from "../../config/config";
 import { toast } from "react-hot-toast";
-import { Type } from "./styled/PokemonElements";
+import TypePokemon from "./TypePokemon";
 import {
   Container,
   NamePokemon,
@@ -75,9 +75,7 @@ const PokemonDetails = ({ idPokemon, onCloseModal }) => {
           <ContainerTypes>
             Type:
             {types.map((type, index) => (
-              <Type key={`type-${parseInt(index)}`} color={type?.type?.name}>
-                {type?.type?.name}{" "}
-              </Type>
+              <TypePokemon key={`type-${parseInt(index)}`} type={type?.type?.name} />
             ))}
           </ContainerTypes>
           <PokemonStat name="Base Experience" information={base_experience} />

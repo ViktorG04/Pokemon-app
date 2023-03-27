@@ -8,7 +8,7 @@ import PokemonDetails from "../components/pokemon/PokemonDetails";
 import Dashboard from "../components/dashboard/Dashboard";
 import InformationPage from "../components/page/InformationPage";
 import { Container } from "./styled/ViewElements";
-import { Table, Image, Button } from "./styled/FavoritesElements";
+import TableFavorites from "../components/table/TableFavorites";
 
 const Favorites = () => {
   const { favorites } = useSelector((state) => state.favorite);
@@ -25,43 +25,23 @@ const Favorites = () => {
   return (
     <Dashboard pageName="Favorites" linkRedirect="/" returnName="HOME">
       <Container>
-        <InformationPage
-          findPokemon={word}
-          onChange={catchCharacters}
-          currentPage={currentPage}
-          onHandlePrev={buttonPrev}
-          onHandleNext={buttonNext}
-          page="favorite"
+        {currentItems.length > 10 ? (
+          <InformationPage
+            findPokemon={word}
+            onChange={catchCharacters}
+            currentPage={currentPage}
+            onHandlePrev={buttonPrev}
+            onHandleNext={buttonNext}
+            page="favorite"
+          />
+        ) : null}
+
+        <TableFavorites
+          currentItems={currentItems}
+          onHandleDetails={onHandleDetails}
+          onHandleDelete={onHandleDelete}
         />
 
-        <Table>
-          <thead>
-            <tr>
-              <th>Alias</th>
-              <th>Image</th>
-              <th>Comments</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((pokemon, index) => (
-              <tr key={`favorite-${parseInt(index)}`}>
-                <td>{pokemon.alias}</td>
-                <td>
-                  <Image
-                    src={pokemon.image}
-                    alt={pokemon.name}
-                    onClick={() => onHandleDetails(pokemon.id)}
-                  />
-                </td>
-                <td>{pokemon.comment}</td>
-                <td>
-                  <Button onClick={() => onHandleDelete(pokemon.alias)}>delete</Button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
         <Modal isOpen={open}>
           {open ? <PokemonDetails idPokemon={idPokemon} onCloseModal={closeModal} /> : null}
         </Modal>

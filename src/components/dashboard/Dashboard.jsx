@@ -3,10 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Body, Navbar, Image, Elements } from "./DashboardElements";
 import logo from "../../assets/Pokedex.png";
 
-const styledNavLink = {
-  color: "white",
-};
-
 const Dashboard = ({ children, pageName, linkRedirect, returnName }) => {
   return (
     <>
@@ -14,7 +10,7 @@ const Dashboard = ({ children, pageName, linkRedirect, returnName }) => {
         <Elements>
           <Image src={logo} alt="Pokedex" />
           <h1>{pageName}</h1>
-          <NavLink style={styledNavLink} to={linkRedirect}>
+          <NavLink style={{ color: "white" }} to={linkRedirect}>
             {returnName}
           </NavLink>
         </Elements>

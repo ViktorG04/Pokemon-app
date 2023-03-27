@@ -29,7 +29,7 @@ const AddFavorite = ({ pokemon, onCloseModal }) => {
   return (
     <Container>
       <Form onSubmit={onHandleSubmit}>
-        <h2>Safe Pokemon</h2>
+        <h2>Save Pokemon</h2>
         <h3>{pokemon?.name}</h3>
         <Input
           label="Alias"
@@ -50,7 +50,7 @@ const AddFavorite = ({ pokemon, onCloseModal }) => {
           <Button type="Reset" onClick={onCloseModal}>
             Cancel
           </Button>
-          <Button>Safe</Button>
+          <Button>Save</Button>
         </ContainerButtons>
       </Form>
     </Container>

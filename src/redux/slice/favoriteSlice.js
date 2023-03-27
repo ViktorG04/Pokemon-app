@@ -10,11 +10,10 @@ export const PokemonSlice = createSlice({
 
   reducers: {
     addPokemon: (state, action) => {
-      state.favorites.push(action.payload);
+      state.favorites = [...state.favorites, action.payload];
     },
     deletePokemon: (state, action) => {
-      const list = state.favorites;
-      state.favorites = list.filter((favorite) => favorite.alias !== action.payload);
+      state.favorites = state.favorites.filter((favorite) => favorite.id !== action.payload);
     },
   },
 });

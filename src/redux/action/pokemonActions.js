@@ -7,7 +7,6 @@ export const getPokemons = createAsyncThunk("pokemons/All", async (_, { rejectWi
     const result = await consultPokemons();
     return result;
   } catch (error) {
-    console.log(error);
     return rejectWithValue(error);
   }
 });

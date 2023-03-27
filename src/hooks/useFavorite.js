@@ -8,8 +8,8 @@ const useFavorite = (openViewPokemon) => {
 
   const dispatch = useDispatch();
 
-  const onHandleDelete = (alias) => {
-    dispatch(deletePokemon(alias));
+  const onHandleDelete = (id) => {
+    dispatch(deletePokemon(id));
     toast.success("pokemon removed from favorites list");
   };
 
